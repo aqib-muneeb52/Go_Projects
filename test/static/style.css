@@ -1,0 +1,41 @@
+/* styles.css */
+
+/* Optional custom styles */
+
+/* Center content vertically and horizontally */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Center text vertically and horizontally */
+h1, form, table {
+  text-align: center;
+}
+
+/* Add some padding to forms */
+form {
+  padding: 20px;
+}
+
+/* Style buttons using Bootstrap classes */
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Add some margin between elements */
+form, table, a {
+  margin-top: 20px;
+}
