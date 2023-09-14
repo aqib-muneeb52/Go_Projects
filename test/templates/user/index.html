@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Users List</h1>
+        
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{range .}}
+                <tr>
+                    <td>{{.ID}}</td>
+                    <td>{{.Name}}</td>
+                    <td>{{.Age}}</td>
+                    <td>{{.Address}}</td>
+                    <td>
+                        <!-- <a class="btn btn-primary btn-sm" href="/users/view?id={{.ID}}">View</a>
+                        <a class="btn btn-warning btn-sm" href="/users/edit?id={{.ID}}">Edit</a>
+                        <a class="btn btn-danger btn-sm" href="/users/delete?id={{.ID}}">Delete</a> -->
+                    </td>
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+
+        <!-- <a class="btn btn-success" href="/users/create">Create New Product</a> -->
+    </div>
+</body>
+</html>
+
+
