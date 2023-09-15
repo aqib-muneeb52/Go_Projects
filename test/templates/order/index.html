@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order List</title>
+    <!-- <link rel="stylesheet" href="/static/styles.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header >
+        <table>
+            <tbody class="table">
+                <td><a class="btn-success btn-sm"  href="/products">Products</a></yd>
+                <td><a class="btn-primary btn-sm " href="/orders">Orders</a></td>
+                <td><a class="btn-secondary btn-sm" href="/users">Users</a></td>
+            </tbody>
+        </table>
+    </header>
+    <h1>Order List</h1>
+    <table class="table mt-3 container">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Count</th>
+                <th>Product Name</th>
+                <th>User Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class >
+            {{range .}}
+            <tr>
+                <td>{{.ID}}</td>
+                <td>{{.Total}}</td>
+                <td>{{.ProductName}}</td>
+                <td>{{.UserName}}</td>
+                <td>
+                    <a class="btn-success btn-sm" href="/orders/edit?id={{.ID}}">Edit</a> |
+                    <a class="btn-primary btn-sm" chref="/orders/delete?id={{.ID}}">Delete</a>
+                </td>
+            </tr>
+            {{end}}
+        </tbody>
+    </table>
+    <a class="btn-primary  btn-sm" href="/orders/create">Create New Order</a>
+</body>
+</html>

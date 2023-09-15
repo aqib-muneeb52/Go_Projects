@@ -113,6 +113,5 @@ func ProductDelete(w http.ResponseWriter, r *http.Request) {
         http.Error(w, "Error deleting product", http.StatusInternalServerError)
         return
     }
-
     http.Redirect(w, r, "/products", http.StatusSeeOther)
 }

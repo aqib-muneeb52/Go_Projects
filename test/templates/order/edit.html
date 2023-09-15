@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Order</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>Edit Order</h1>
+    <form method="POST">
+        <label for="total">Total:</label>
+        <input type="number" name="total" value="{{.Order.Total}}" required>
+        <!-- <br> -->
+        <label for="productID">Product:</label>
+        <select name="productID">
+            {{range .Products}}
+            <option value="{{.ID}}" {{if eq .ID $.Order.ProductID}}selected{{end}}>{{.Name}}</option>
+            {{end}}
+        </select>
+        <br>
+        <input type="submit" value="Update Order">
+    </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Order</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>Create Order</h1>
+    <form method="POST" class="container">
+        <label for="total">Count:</label>
+        <input class="" type="number" name="total" required>
+        <br>
+        <label for="productID">Product:</label>
+        <select name="productID" class="form-select form-select-lg" aria-label="Default select example">
+            {{range .Products}}
+            <option value="{{.ID}}">{{.Name}}</option>
+            {{end}}
+        </select>
+        <br>
+        <label for="userID">User:</label>
+        <select name="userID" class="form-select form-select-lg" aria-label="Default select example">
+            {{range .Users}}
+            <option value="{{.ID}}">{{.Name}}</option>
+            {{end}}
+        </select>
+        <br>
+        <input type="submit" value="Create Order">
+    </form>
+</body>
+</html>
